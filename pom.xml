@@ -13,6 +13,8 @@
         <module>grpc-api</module>
         <module>grpc-order</module>
         <module>grpc-customer</module>
+        <module>graphql-gateway</module>
+        <module>graphql-schema</module>
     </modules>
 
     <properties>
