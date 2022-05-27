@@ -1,0 +1,11 @@
+# Query 是整个 graphql 的跟查询节点.所有的查询都要从这里暴露出去
+type Query {
+    customer(id:ID):Customer
+}
+
+# 我们在这里声明一个 Customer 的 graphql 类型
+type Customer{
+    id:ID # graphql 特有的id类型，对应java里的String或者Long
+    customerName:String
+    customerAddress:String
+}

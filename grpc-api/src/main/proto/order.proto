@@ -1,0 +1,27 @@
+syntax = "proto3"; // 指定 proto 的版本，我们这边使用的是 proto3
+
+package fruit.order; // 定义 proto 的 package,此部分和下面的 java_package 相关。如果我们在下面不指定 java_package 的名称，编译器会将此名称当作包名
+
+option java_multiple_files = true;
+option java_package = "fc.proto.order";
+option java_outer_classname = "OrderProto"; // 输出的 class 名称
+
+// 在 protobuf 中，可以通过 import 去引用其他地方声明的实体
+import "google/protobuf/wrappers.proto";
+
+// 我们先定义一个实体
+// 在 proto 中, 使用 message 开头定义实体
+message Customer{
+  // 对于 protobuf 的基本类型，我们这边不再进行赘述
+  int64 id=1;
+  string customer_name=2;
+  string customer_address=3;
+  // 在 protobuf 中，接口直接的调用不会根据名称去匹配值，而是根据名称对应的数字去匹配
+}
+
+// 接着，我们定义一个服务
+
+service CustomerService{
+  // 根据 id 查询客户
+  rpc customer(google.protobuf.Int64Value) returns (Customer);
+}

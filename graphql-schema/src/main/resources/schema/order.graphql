@@ -1,0 +1,10 @@
+# 我们在 Customer 那边声明了 Query,不能直接在这边再声明一个，需要使用 extend 去继承
+extend type Query {
+    order(id:ID):Customer
+}
+
+type Order{
+    id:ID
+    orderName:String
+    orderNo:String
+}

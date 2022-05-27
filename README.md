@@ -26,7 +26,10 @@
   - grpc-customer 客户的grpc服务
   - grpc-supplier 供应商的服务
 
-## 开始构建项目
+## 环境搭建
+在
+
+## 开始构建 grpc 项目
 
 ### 1. 定义 protobuf 文件
 
@@ -68,3 +71,19 @@ service CustomerService{
 这个插件进行编译
 
 ### 继承编译好的 grpc-service 完成我们的接口
+
+## 开始构建 graphql 项目
+
+```graphql
+# Query 是整个 graphql 的跟查询节点.所有的查询都要从这里暴露出去
+type Query {
+    customer(id:ID):Customer
+}
+
+# 我们在这里声明一个 Customer 的 graphql 类型
+type Customer{
+    id:ID # graphql 特有的id类型，对应java里的String或者Long
+    customerName:String
+    customerAddress:String
+}
+```
