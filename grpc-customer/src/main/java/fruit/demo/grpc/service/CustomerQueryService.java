@@ -1,8 +1,9 @@
 package fruit.demo.grpc.service;
 
 import com.google.protobuf.Int64Value;
-import fc.proto.basic.Customer;
-import fc.proto.basic.CustomerServiceGrpc;
+
+import fc.proto.customer.Customer;
+import fc.proto.customer.CustomerServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 
