@@ -7,12 +7,11 @@ option java_package = "fc.proto.customer";
 option java_outer_classname = "CustomerProto";
 
 // 此处引用客户的定义
-import "customer.proto";
 import "google/protobuf/wrappers.proto";
 
 // 我们先定义一个实体
 // 在 proto 中, 使用 message 开头定义实体
-message Order{
+message Customer{
   // 对于 protobuf 的基本类型，我们这边不再进行赘述
   int64 id=1;
   string customer_name=2;
@@ -22,7 +21,7 @@ message Order{
 
 // 接着，我们定义一个服务
 
-service OrderService{
+service CustomerService{
     // 根据 id 查询客户
-    rpc order(google.protobuf.Int64Value) returns (Order);
+    rpc customer(google.protobuf.Int64Value) returns (Customer);
 }
