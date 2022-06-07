@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  orange-consul:
+    container_name: fruit-consul
+    build:
+      context: ./software/consul
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - 8500:8500
+      - 8600:8600/udp
+    command: agent -server -ui -node=server -bootstrap-expect=1 -client=0.0.0.0 -http-port=8500
+    networks:
+      - fruit
+
+  orange-postgres:
+    container_name: fruit-postgres
+    build:
+      context: ./software/postgres
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - 15432:5432
+    environment:
+      POSTGRES_PASSWORD: 2020.Hj
+    volumes:
+      - ./var/postgresql:/var/lib/postgresql
+    networks:
+      - fruit
+networks:
+  fruit:
