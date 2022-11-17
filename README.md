@@ -87,3 +87,6 @@ type Customer{
     customerAddress:String
 }
 ```
+
+## FAQ
+有任何问题的，欢迎在issues里面提问
