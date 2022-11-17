@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: grpc-customer
+grpc:
+  server:
+    port: 6002

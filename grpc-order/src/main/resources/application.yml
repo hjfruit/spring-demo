@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: grpc-order
+grpc:
+  server:
+    port: 6001

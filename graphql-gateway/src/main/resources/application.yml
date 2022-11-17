@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: graphql-gateway
+server:
+  port: 8081
+
+grpc:
+  client:
+    grpc-order:
+      negotiation-type: plaintext
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      address: 'static://127.0.0.1:6001'
+    grpc-customer:
+      negotiation-type: plaintext
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      address: 'static://127.0.0.1:6002'
