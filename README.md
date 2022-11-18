@@ -88,5 +88,8 @@ type Customer{
 }
 ```
 
+## 如何测试我们的接口
+在使用 Graphql 之后,我们应该如何测试我们的接口呢。最简单的方式就是使用PLayGround了，详情见 [playground.md](./docs/playground.md)
+
 ## FAQ
 有任何问题的，欢迎在issues里面提问
