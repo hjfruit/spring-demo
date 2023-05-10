@@ -5,6 +5,7 @@ import fruit.demo.gateway.entity.types.Order;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
+@Mapper
 @MapperConfig(
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
