@@ -10,9 +10,11 @@ grpc:
       negotiation-type: plaintext
       enableKeepAlive: true
       keepAliveWithoutCalls: true
-      address: 'static://127.0.0.1:6001'
+      # 方便本地调用，指定地址，调用到本地的rpc服务，线上需要注释，根据consul取实际地址
+      address: static://127.0.0.1:6001
     grpc-customer:
       negotiation-type: plaintext
       enableKeepAlive: true
       keepAliveWithoutCalls: true
-      address: 'static://127.0.0.1:6002'
+      # 方便本地调用，指定地址，调用到本地的rpc服务，线上需要注释，根据consul取实际地址
+      address: static://127.0.0.1:6002
